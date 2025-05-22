@@ -25,5 +25,5 @@ Este projeto tem como objetivo educacional e demonstra a implementação de um f
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/neymar-skill.git
+   git clone https://github.com/GaldinoFabricio/skill-neymar.git
    ```
