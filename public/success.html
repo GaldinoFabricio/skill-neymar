@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Payment Success - Neymar Skill</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+         padding-top: 50px;
+      }
+
+      .loading {
+         font-size: 18px;
+         color: #666;
+      }
+
+      .result {
+         font-size: 20px;
+         font-weight: bold;
+         margin-top: 20px;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Payment Successful!</h1>
+   <p class="loading">Validating if you have Neymar's skill...</p>
+   <div id="result"></div>
+
+   <script>
+      // Função para validar se o pagamento foi bem-sucedido e checar a "habilidade do Neymar"
+      async function validatePayment() {
+         const urlParams = new URLSearchParams(window.location.search);
+         const sessionId = urlParams.get('session_id');
+
+         if (!sessionId) {
+            document.querySelector('.loading').textContent = 'Invalid session ID';
+            window.location.href = 'index.html';
+            return;
+         }
+
+         try {
+            const response = await fetch(`http://localhost:3000/check-neymar-skill?session_id=${sessionId}`);
+            const data = await response.json();
+            const resultDiv = document.getElementById('result');
+
+            if (data.hasSkill) {
+               resultDiv.innerHTML = '<p class="result">You have Neymar\'s skill! 🎉</p><img src="https://example.com/neymar-skill.png" alt="Neymar Skill">';
+            } else {
+               resultDiv.innerHTML = '<p class="result">Unfortunately, no Neymar skill this time. 😔</p>';
+            }
+            document.querySelector('.loading').style.display = 'none';
+         } catch (error) {
+            document.querySelector('.loading').textContent = 'Failed to validate payment.';
+         }
+      }
+
+      // Chama a função de validação quando a página é carregada
+      window.onload = validatePayment;
+   </script>
+</body>
+
+</html>

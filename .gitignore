@@ -1,0 +1,10 @@
+.env
+
+node_modules
+
+public/images/
+
+yarn.lock
+package-lock.json
+
+.editorconfig
