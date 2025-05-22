@@ -1,6 +1,6 @@
 # Neymar Skill
 
-**PT-BR | EN**
+PT-BR | [EN](README_EN.md)
 
 ## 🇧🇷 Sobre o Projeto
 

@@ -1,4 +1,4 @@
-**PT-BR | EN**
+EN | [PT-BR](README.md)
 
 ## 🇬🇧 About the Project
 
